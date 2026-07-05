@@ -6,7 +6,7 @@ This project is a modified rewrite of the excellent ESP32-CAM firmware from Cody
 Original Project: CodyTolene/Flipper-Zero-Camera-Suite
 Please visit the original repository to support their incredible work.
 
-## Architectural Philosophy of this fork
+## Architectural Philosophy of This Fork
 The original project initializes the camera sensor at a low resolution to match the Flipper Zero's screen matrix, streaming those frames directly over the serial line. This is highly efficient for live viewing, but it makes capturing full-color, high-resolution snapshots to the onboard SD card impossible (or at least really hard) without tearing down and re-initializing the entire camera pipeline mid-session.
 
 This fork shifts that paradigm by anchoring the entire system to a high-resolution color baseline:
