@@ -11,13 +11,13 @@ The original project initializes the camera sensor at a low resolution to match 
 
 This fork shifts that paradigm by anchoring the entire system to a high-resolution color baseline:
 
-- High-Res Capture: The camera hardware is permanently locked into a high-resolution color mode (PIXFORMAT_RGB565 at QVGA).
+- **High-Res Capture:** The camera hardware is permanently locked into a high-resolution color mode (PIXFORMAT_RGB565 at QVGA).
 
-- On-the-Fly Downsampling: Instead of asking the camera for a tiny image, the ESP32 captures a full color frame, dynamically downsamples it, and applies a perceived luminance calculation ($Y = 0.299R + 0.587G + 0.114B$) to crush it into the monochrome bitstream the Flipper app expects.
+- **On-the-Fly Downsampling:** Instead of asking the camera for a tiny image, the ESP32 captures a full color frame, dynamically downsamples it, and applies a perceived luminance calculation ($Y = 0.299R + 0.587G + 0.114B$) to crush it into the monochrome bitstream the Flipper app expects.
 
-- Full Color Snapshots: When you press the snapshot command, the camera doesn't need to reboot or change modes. It instantly dumps the raw, uncompressed 24-bit color data directly to the local SD card as a .ppm file.
+- **Full Color Snapshots:** When you press the snapshot command, the camera doesn't need to reboot or change modes. It instantly dumps the raw, uncompressed 24-bit color data directly to the local SD card as a .ppm file.
 
-- Hardware & Storage Safety: Runs a storage scan at boot to find the next available file slot (preventing overwrites) and isolates the shared Flash LED pin (GPIO 4) during SD card operations to avoid data collisions. Additionally, the SD card is forced into 1-bit MMC mode, which completely frees up GPIO 12 and GPIO 13 to protect the Flipper Zero's serial transmission lanes from hardware pin conflicts.
+- **Hardware & Storage Safety:** Runs a storage scan at boot to find the next available file slot (preventing overwrites) and isolates the shared Flash LED pin (GPIO 4) during SD card operations to avoid data collisions. Additionally, the SD card is forced into 1-bit MMC mode, which completely frees up GPIO 12 and GPIO 13 to protect the Flipper Zero's serial transmission lanes from hardware pin conflicts.
 
 ## Welcome to the ESP32-CAM Suite (Color & Higher-Res) for Flipper Zero
 
