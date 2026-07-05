@@ -101,28 +101,6 @@ On the ESP32-CAM module itself you'll also need to connect the `IO0` pin to `GND
 
 ## Firmware Installation <a name="firmware-installation"></a>
 
-The firmware is the software that runs on the ESP32-CAM module. It is required to use the camera module with your Flipper Zero. There are two ways to install the firmware, the new, easy way, and the old, hard way. The new way is a script that will do everything for you, the old way is a manual process that requires you to install the Arduino IDE and manually flash the firmware to the ESP32-CAM module. I recommend the new way, but if you have issues with it, try the old way.
-
-<details>
-
-<summary>Simple Installation - Firmware Flashing Utility</summary>
-
-### Firmware Flashing Utility (Windows 10+ batch script)
-
-1. Download/clone this repository to your computer.
-2. Run the script found at the root of this directory: `firmware-flash.bat`.
-3. Follow the on screen instructions to continue to flash the firmware to your ESP32-CAM module.
-
-That's it, let me know if you have any issues!
-
-</details>
-
-<details>
-
-<summary>Involved Installation - Manually flash with Arduino IDE</summary>
-
-### Arduino IDE
-
 1. Clone/download this repository to your computer.
 2. Download and install the Arduino IDE from [here][arduino-ide].
 3. Open `flipper-zero-camera-suite\firmware\firmware.ino` with your Arduino IDE.
@@ -155,24 +133,6 @@ On success, your screen should look like this:
 <p align="right">[ <a href="#index">Back to top</a> ]</p>
 
 ## Software Installation <a name="software-installation"></a>
-
-Below are two ways to install the software on your Flipper Zero. The first way is the simple way, the second way is the involved way. The simple way is to install the fap file via the Flipper Zero application catalog. The involved way is to manually install the fap file to your Flipper Zero MicroSD card.
-
-<details>
-
-<summary>Simple Installation - Flipper Zero Application Catalog</summary>
-
-### Flipper Zero Application Catalog
-
-This fap app is available on your phones Flipper Zero application catalog! Simply open the Flipper Zero app on your phone, go to the "Applications" tab, and search for "Camera Suite". Install it and you're good to go! More information about Flipper Zero applications can be found [here][flipper-zero-apps].
-
-</details>
-
-<details>
-
-<summary>Involved Installation - Manually Install Files</summary>
-
-### Manually Install Files
 
 1. Connect your Flipper Zero via USB, or insert your MicroSD.
 2. Navigate to the latest GitHub "Build + upload" action [here][github-actions-link].
