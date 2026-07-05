@@ -2,7 +2,7 @@
   <img align="center" src=".github/images/camera-suite.png" />
   <h2 align="center">Flipper Zero - Camera Suite</h2>
   <p align="center">
-    Firmware and software to run an ESP32-CAM module on your Flipper Zero device.
+    Firmware and software to run an ESP32-CAM module and capture color images on your Flipper Zero device.
   </p>
   <a href="https://shop.flipperzero.one/">
     <img src=".github/images/flipper-zero-buy-now.svg" />
@@ -34,15 +34,15 @@
 
 ### Welcome to the ESP32-CAM Suite for Flipper Zero
 
-Discover a new dimension of possibilities by connecting your ESP32-CAM module with your Flipper Zero device. The ESP32-CAM module, a compact ~~powerful~~ cheap camera module, enables you to capture images and stream a live video to your Flipper Zero. With this suite, your Flipper Zero becomes a hub of creativity and utility.
+Discover a new dimension of possibilities by connecting your ESP32-CAM module with your Flipper Zero device. The ESP32-CAM module, a ~~compact powerful~~ cheap camera module, enables you to capture images and stream a ~~live~~ video to your Flipper Zero. With this suite, your Flipper Zero becomes a hub of creativity ~~and utility~~.
 
 **What You Can Do:**
 
-- **Capture Moments:** This custom Flipper Zero application empowers you to take pictures effortlessly. View real-time image previews on your Flipper Zero screen while you capture high quality blocky and pixelated memories! Hey it's still a memory and we're at least having fun...
+- **Capture Moments:** This custom Flipper Zero application empowers you to take pictures ~~effortlessly~~. View realish-time image previews on your Flipper Zero screen while you capture ~~high quality~~ blocky and pixelated FULL COLOR memories! Hey it's still a memory and we're at least having fun...
 
 - **Personalize Your Experience:** Tailor your camera settings with ease. Adjust camera orientation, experiment with various dithering options, and toggle flash, haptic feedback, sound effects, and LED effects to match your preferences. Feel free to use this as a flashlight too, it's pretty bright and good at blinding yourself unexpectedly!
 
-There will be many more features added in the future! If you have any ideas or suggestions, please let me know by opening an issue [here][issues-link].
+~~There will be many more features added in the future!~~
 
 <p align="right">[ <a href="#index">Back to top</a> ]</p>
 
