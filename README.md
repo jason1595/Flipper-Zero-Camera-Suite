@@ -1,24 +1,25 @@
-<div align="center">
-  <img align="center" src=".github/images/camera-suite.png" />
-  <h2 align="center">Flipper Zero - Camera Suite</h2>
-  <p align="center">
-    Firmware and software to run an ESP32-CAM module and capture FULL COLOR images on your Flipper Zero device.
-  </p>
-  <a href="https://shop.flipperzero.one/">
-    <img src=".github/images/flipper-zero-buy-now.svg" />
-  </a>
-  <a href="https://docs.flipperzero.one/">
-    <img src=".github/images/flipper-zero-docs.svg" />
-  </a>
-</div>
+# ESP32-CAM Flipper Camera Suite (Color & Higher-Res)
 
----
+## Attribution
 
-## Introduction
+This project is a modified rewrite of the excellent ESP32-CAM firmware from Cody Tolene's Flipper Zero Camera Suite.
+Original Project: CodyTolene/Flipper-Zero-Camera-Suite
+Please visit the original repository to support their incredible work.
 
-<img align="center" src=".github/images/preview.png" />
+## Architectural Philosophy of this fork
+The original project initializes the camera sensor at a low resolution to match the Flipper Zero's screen matrix, streaming those frames directly over the serial line. This is highly efficient for live viewing, but it makes capturing full-color, high-resolution snapshots to the onboard SD card impossible (or at least really hard) without tearing down and re-initializing the entire camera pipeline mid-session.
 
-### Welcome to the ESP32-CAM Suite for Flipper Zero
+This fork shifts that paradigm by anchoring the entire system to a high-resolution color baseline:
+
+-High-Res Capture: The camera hardware is permanently locked into a high-resolution color mode (PIXFORMAT_RGB565 at QVGA).
+
+-On-the-Fly Downsampling: Instead of asking the camera for a tiny image, the ESP32 captures a full color frame, dynamically downsamples it, and applies a perceived luminance calculation ($Y = 0.299R + 0.587G + 0.114B$) to crush it into the monochrome bitstream the Flipper app expects.
+
+-Full Color Snapshots: When you press the snapshot command, the camera doesn't need to reboot or change modes. It instantly dumps the raw, uncompressed 24-bit color data directly to the local SD card as a .ppm file.
+
+-Hardware & Storage Safety: Runs a storage scan at boot to find the next available file slot (preventing overwrites) and isolates the shared Flash LED pin (GPIO 4) during SD card operations to avoid data collisions. Additionally, the SD card is forced into 1-bit MMC mode, which completely frees up GPIO 12 and GPIO 13 to protect the Flipper Zero's serial transmission lanes from hardware pin conflicts.
+
+## Welcome to the ESP32-CAM Suite (Color & Higher-Res) for Flipper Zero
 
 Discover a new dimension of possibilities by connecting your ESP32-CAM module with your Flipper Zero device. The ESP32-CAM module, a ~~compact powerful~~ cheap camera module, enables you to capture images and stream a ~~live~~ video to your Flipper Zero. With this suite, your Flipper Zero becomes a hub of creativity ~~and utility~~.
 
@@ -93,8 +94,8 @@ On success, your screen should look like this:
 ## Software Installation
 
 1. Connect your Flipper Zero via USB, or insert your MicroSD.
-2. Navigate to the latest GitHub "Build + upload" action [here][github-actions-link].
-3. Open the most recent action on that page (top of the list) and download the fap zip for either "dev" or "release" build versions of the Flipper Zero firmware depending on your usage. Generally you'll want to use the "release" build version.
+2. Navigate to the latest GitHub Release
+3. Download the file "camera_suit.fap"
 4. Move "camera_suite.fap" into `~\apps\gpio\` on your Flipper Zero MicroSD:
 
    ```markdown
@@ -147,12 +148,6 @@ On success, your screen should look like this:
 | **Haptic Effects** | Toggle haptic feedback on/off. |
 | **Sound Effects** | Toggle sound effects on/off. |
 | **LED Effects** | Toggle LED effects on/off. |
-
-<p align="right">[ <a href="#index">Back to top</a> ]</p>
-
-## Attribution
-
-This project is 100% derrived from the work of Cody Tolene and the amazing people who have contributed to his repo. https://github.com/CodyTolene/Flipper-Zero-Camera-Suite.
 
 <p align="right">[ <a href="#index">Back to top</a> ]</p>
 
