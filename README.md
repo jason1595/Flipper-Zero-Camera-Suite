@@ -61,7 +61,7 @@ On the ESP32-CAM module itself you'll also need to connect the `IO0` pin to `GND
 ## Firmware Installation
 
 1. Clone/download this repository to your computer.
-2. Download and install the Arduino IDE from [here][arduino-ide].
+2. Download and install the Arduino IDE.
 3. Open `flipper-zero-camera-suite\firmware\firmware.ino` with your Arduino IDE.
 4. In the Arduino IDE, go to `File > Preferences`.
 5. In the `Settings` tab, add the following URL to the `Additional Boards Manager URLs` field:
