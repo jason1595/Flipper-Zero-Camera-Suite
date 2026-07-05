@@ -2,7 +2,7 @@
   <img align="center" src=".github/images/camera-suite.png" />
   <h2 align="center">Flipper Zero - Camera Suite</h2>
   <p align="center">
-    Firmware and software to run an ESP32-CAM module and capture color images on your Flipper Zero device.
+    Firmware and software to run an ESP32-CAM module and capture FULL COLOR images on your Flipper Zero device.
   </p>
   <a href="https://shop.flipperzero.one/">
     <img src=".github/images/flipper-zero-buy-now.svg" />
@@ -172,7 +172,7 @@ On success, your screen should look like this:
 | ◀️     | Toggle invert |
 | ▶️     | Toggle dithering on/off |
 | ↩️     | Go back |
-| 🔵     | Take a picture and save to the "DCIM" folder at the root of your SD card. Image will be saved as a bitmap file with a timestamp as the filename ("YYYYMMDD-HHMMSS.bmp"). If flash is on in the settings (enabled by default) the ESP32-CAM onboard LED will light up when the camera is opened. |
+| 🔵     | Take a picture and save to the "DCIM" folder at the root of your SD card flipper zero SD card. Additionally if an SD card is isntalled in the ESP32-CAM a higher resolution FULL COLOR image will be saved in the .ppm format to the root of the SD card |
 
 ### Camera Settings
 
