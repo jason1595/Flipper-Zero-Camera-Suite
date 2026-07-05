@@ -3,7 +3,7 @@
 ## Attribution
 
 This project is a modified rewrite of the excellent ESP32-CAM firmware from Cody Tolene's Flipper Zero Camera Suite.
-Original Project: CodyTolene/Flipper-Zero-Camera-Suite
+Original Project: [CodyTolene/Flipper-Zero-Camera-Suite](https://github.com/CodyTolene/Flipper-Zero-Camera-Suite)
 Please visit the original repository to support their incredible work.
 
 ## What is This Fork
